@@ -8,19 +8,19 @@ import { serveDir } from "http/file_server.ts";
 /**
  * APIリクエストを処理する
  */
-serve((req) => {
+Deno.serve((request) => {
   // URLのパスを取得
-  const pathname = new URL(req.url).pathname;
-  console.log(pathname);
+  const pathname = new URL(request.url).pathname;
+  console.log(`pathname = ${pathname}`);
   // パスが'/welcome-message'だったら「'jigインターンへようこそ！'」の文字を返す
   
-  if (req.method === "GET" && pathname === "/welcome-message") {
+  if (request.method === "GET" && pathname === "/welcome-message") {
     return new Response("jig.jpインターンへようこそ！👍");
 
   }
 
   // publicフォルダ内にあるファイルを返す
-  return serveDir(req, {
+  return serveDir(request, {
 
     fsRoot: "public",
     urlRoot: "",
