@@ -9,12 +9,15 @@
       document.addEventListener("DOMContentLoaded", function () {
         const signUpButton = document.getElementById("signUp");
         const nameInput = document.getElementById("name");
+        const passInput = document.getElementById("pass");
         const activeInput = document.getElementById("active");
 
         signUpButton.addEventListener("click", function (event) {
           const name = nameInput.value;
+          const pass = passInput.value;
           const active = activeInput.value;
           localStorage.setItem("name", name);
+          localStorage.setItem("password", pass);
           localStorage.setItem("active", active);
         });
       });
@@ -26,6 +29,9 @@
         <div class="inputContainer">
           <label>名前</label>
           <input type="text" id="name" placeholder="名前を入力" />
+          <br>
+          <label>password</label>
+          <input type="password" id="password" placeholder="Enter Password" />
         </div>
         <div class="inputContainer">
           <label>最近の出来事</label>

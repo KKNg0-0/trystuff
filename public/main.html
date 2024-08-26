@@ -5,13 +5,20 @@
     <meta charset="utf-8" />
     <title>Neo Hello</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="/public/app.js"></script>
     <script>
       window.onload = function () {
         const name = document.getElementById("usrName");
         name.innerHTML = localStorage.getItem("name");
-        const active = document.getElementById("active");
-        active.innerHTML = localStorage.getItem("active");
+        const active = document.getElementById("activity");
+        activity.innerHTML = localStorage.getItem("active");
       };
+
+      function goback() {
+        localStorage.removeItem("name");
+        localStorage.removeItem("active");
+        window.location.href = "index.html";
+      }
     </script>
   </head>
   <body>
@@ -19,6 +26,8 @@
       <div id="QR">
         <img src="./img/QR.jpg" alt="QRコード" id="qrImg" />
       </div>
+      <br>
+      <button id="goback" onclick="goback();">return</button>
       <div id="icon">
         <img
           src="https://cdn.prod.website-files.com/603c87adb15be3cb0b3ed9b5/662b271e8b82b058df0982da_089.png"
@@ -29,7 +38,7 @@
       </div>
       <div id="text">
         <div>最近あったこと</div>
-        <div id="active">鯖江でBBQをした！</div>
+        <div id="activity">鯖江でBBQをした！</div>
       </div>
     </div>
   </body>

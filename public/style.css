@@ -23,6 +23,19 @@
   height: 100%;
 }
 
+#goback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  border-radius: 2.5rem;
+  background-color: cornflowerblue;
+  color: white;
+  font-size: medium;
+  width: 30vw;
+  height: 30px;
+}
+
 #QR,
 #icon,
 #text {
@@ -56,7 +69,17 @@
   height: 40px;
 }
 
+#password {
+  width: 80%;
+  height: 40px;
+}
+
 #active {
+  width: 80%;
+  height: 40px;
+}
+
+#activity {
   width: 80%;
   height: 40px;
 }
